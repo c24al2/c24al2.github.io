@@ -13,11 +13,20 @@
 			background-repeat: no-repeat;
 
 		}
+		body{
+		margin:0px;
+		background-image: url(pastelbakery.jpeg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		
+		}
 	</style>
+
 </head>
 <body>
+	<audio id="song" src="bakery.mp3"></audio>
 	<center>
-		<h1>What candy are you? </h1>
+		<h1>What kind of cheesecake are you? </h1>
 
 		<div id="candy">
 			
@@ -27,19 +36,19 @@
 
 	<script type="text/javascript">
 		
-		var cores = ["yellow", "purple", "lightblue", "grey", "pink", "lightgreen", "violet", "lightpink"]
+		var cores = ["#FAB8B8", "#FDE1FA", "#B5ABFC", "#ABD3FC", "#AFE2CF", "#FCF893", "#FCD993", "#834A1F"]
 
-		var kartinki = ["url(sour-patch.png)",
+		var kartinki = ["url(cheese1.png)",
 
-		"url(lollipop.png)",
+		"url(cheese2.png)",
 
-		"url(yummy.png)",
+		"url(cheese3v2.png)",
 
-		"url(delight.png)",
-		"url(strawberri.png)",
-		"url(gummy-bears.png)",
-		"url(lozenge.png)",
-		"url(mellow.png)"]
+		"url(cheese4.png)",
+		"url(cheese5v3.png)",
+		"url(cheese6.png)",
+		"url(cheese7v2.png)",
+		"url(cheese8.png)"]
 
 
 		var box = document.getElementById('candy');
@@ -56,6 +65,16 @@
 
 			console.log(box.style.backgroundImage)
 		})
+
+	var counter = 0 
+	var song = document.getElementById("song")
+	document.body.addEventListener("dblclick", function(){
+		counter = counter + 1
+		if(counter%2 == 1){song.play()}
+
+		else if(counter%2 == 0){song.pause()}
+	})
+
 	</script>
 </body>
 </html>

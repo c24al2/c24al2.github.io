@@ -4,11 +4,20 @@
 	<title></title>
 	<style type="text/css">
 
+		.header {
+		color: grey;
+		opacity: 0.75;
+		background-color: transparent;
+		font-size: 40px;
+		font-family: 'Qwigley', cursive;
+		text-align: center;
+	}
 		.octopi{
 			width: 400px;
 			height: 300px;
 			background-size: contain;
 			background-image: url(octopus.gif);
+			background-repeat: no-repeat;
 			display: inline-block;
 
 			animation-name: underwater;
@@ -16,6 +25,14 @@
 			animation-iteration-count: infinite;
 		}
 
+		body{
+		margin:0px;
+		/*background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2AuaWlvB6jbvc2NqWzqRVtP29h8Gbu5L2TQ&usqp=CAU),*/
+		background-image: url(underwater.jpeg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		
+		}
 		@keyframes underwater {
 			0% {
 				transform: rotate(45deg);
@@ -58,6 +75,56 @@
 			height: 300px;
 			background-size: contain;
 			background-image: url(squidsarefun.gif);
+			background-repeat: no-repeat;
+			display: inline-block;
+
+			animation-name: underwater;
+			animation-duration: 8s;
+			animation-iteration-count: infinite;
+		}
+
+		@keyframes underthesea{
+			0% {
+				transform: rotate(45deg);
+				right:0px;
+			}
+			12.5%{
+				transform: rotate(90deg);
+				right:100px;
+			} 
+			25%{
+				transform: rotate(135deg);
+				left:200px;
+			}
+			37.5%{
+				transform: rotate(90deg);
+				left:300px;
+			}
+			50%{
+				transform: rotate(45deg);
+				left:400px;
+			}
+			62.5%{
+				transform: rotate(0deg);
+				left:500px;
+
+			}75%{
+				transform: rotate(-45deg);
+				left:600px;
+			}
+			87.5%{
+				transform: rotate(0deg);
+				left:700px;
+			}
+
+		}
+
+		.dolphins{
+			width: 500px;
+			height: 300px;
+			background-size: contain;
+			background-image: url(dolphin.gif);
+			background-repeat: no-repeat;
 			display: inline-block;
 
 			animation-name: underwater;
@@ -102,15 +169,29 @@
 		}
 </style>
 </head>
+<div class="header">
+ <h1>Under Sea Dance Party</h1>
+</div>
 <body>
+<audio id="song" src="undersea.mp3"></audio>
 	<div class="octopi" id="octopus1"></div>
 	<div class="octopi" id="octopus2"></div>
 	<div class="octopi" id="octopus3"></div>
 	<div class="squids" id="squid1"></div>
 	<div class="squids" id="squid2"></div>
-	<div class="squids" id="squid3"></div>
 	<div class="dolphins" id="dolphins1"></div>
-	<div class="dolphins" id="dolphins2"></div>
-	<div class="dolphins" id="dolphins3"></div>
+
+<script type="text/javascript">
+	var counter = 0 
+	var song = document.getElementById("song")
+	document.body.addEventListener("click", function(){
+		counter = counter + 1
+		if(counter%2 == 1){song.play()}
+
+		else if(counter%2 == 0){song.pause()}
+	})
+
+ 	
+	</script>
 </body>
 </html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+	.float-container {}
+
+	.float-child {
+    width: 33%;
+    float: left;
+   
+	} 
+
+	.header {
+		color: #82C0E9;
+		opacity: 1.0;
+		padding: 0 0 100px;
+		background-color: transparent;
+		font-size: 40px;
+		font-family: 'Qwigley', cursive;
+		text-align: center;
+
+	}
+	
+	.item{
+			position:relative;
+			width: 31%;
+			display:inline-block;
+			text-align:center;
+			font-size:50px;
+		}
+		.item:hover {
+        background-color: #F9AED4;
+        opacity:70%;
+        transition: 2s;
+    	}
+
+	body{
+		margin:0px;
+		/*background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2AuaWlvB6jbvc2NqWzqRVtP29h8Gbu5L2TQ&usqp=CAU),*/
+		background-image: url(crystal.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		
+		}
+	#orcas{width: 100%;
+	height: 800px;
+	background-image: url(yetiskate.gif);
+	opacity: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 480px;}
+
+	#whales{width: 100%;
+	height: 800px;
+	background-image: url(foxski.gif);
+	opacity: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 600px;}
+
+	#fish{width: 100%;
+	height: 800px;
+	background-image: url(dog1.gif);
+	opacity: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 400px;}
+
+	a{
+		text-decoration:none;
+		font-size: 60px;
+		color: #B77AB3;
+		font-family: 'Qwigley', cursive;
+		position:relative;
+		text-align:center;
+	}     	
+	</style>
+</head>
+<body> 
+
+
+<div class="header">
+ <h1>Figure Skaters</h1>
+ <audio id="song" src="skatingsound.mp3"></audio>
+</div>
+
+
+<div class="float-container">
+
+  <div class="float-child">	
+  	<button onclick="hellofriend()">Click To See The Fox Skater!</button>
+   	<div id="whales"></div>
+  	</div>
+  
+  <div class="float-child">
+  	<button onclick="myFunction()">Click To See The Yeti Skater!</button>
+ 	<div id="orcas"></div>
+  	</div>
+
+  	<div class="float-child">
+  	<button onclick="night()">Click To See The Dog Skater!</button>
+ 	<div id="fish"></div>
+  	</div>
+  
+</div>
+
+<script type="text/javascript">
+		var counter = 0 
+	var song = document.getElementById("song")
+	document.body.addEventListener("dblclick", function(){
+		counter = counter + 1
+		if(counter%2 == 1){song.play()}
+
+		else if(counter%2 == 0){song.pause()}
+	})
+
+	x.style.display === "none"
+	function myFunction() {
+  	var x = document.getElementById("orcas");
+  	if (x.style.display === "none") {
+    x.style.display = "block";
+  	} else {
+    x.style.display = "none";
+  	}
+	}
+
+	y.style.display === "none" 
+	function hellofriend() {
+  	var y = document.getElementById("whales");
+  	if (y.style.display === "none") {
+    y.style.display = "block";
+  	} else {
+    y.style.display = "none";
+  	}
+	}
+
+	function night() {
+  	var y = document.getElementById("fish");
+  	if (y.style.display === "none") {
+    y.style.display = "block";
+  	} else {
+    y.style.display = "none";
+  	}
+	}
+
+
+
+
+
+ 	
+	</script>
+
+
+
+</body>
+</html>
