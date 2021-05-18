@@ -30,7 +30,7 @@
 			text-align:center;
 			font-size:50px;
 		}
-		.item:hover {
+	.item:hover {
         background-color: #F9AED4;
         opacity:70%;
         transition: 2s;
@@ -75,17 +75,50 @@
 		font-family: 'Qwigley', cursive;
 		position:relative;
 		text-align:center;
-	}     	
+	}    
+
+	#first{
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		background-size: contain;
+		background-image:url(blue1.png);
+	}
+
+	#second{
+		position: absolute;
+		width: 58px;
+		height: 100px;
+		background-size: contain;
+		background-image:url(secondplace.png);
+	} 	
+
+	#third{
+		position: absolute;
+		width: 90px;
+		height: 100px;
+		background-size: contain;
+		background-image:url(third3.png);
+	} 	
 	</style>
 </head>
 <body> 
 
+<div id="first">
+	<div id="firstheader">1</div></div><div class="header">
 
-<div class="header">
+
+<div id="second">
+	<div id="secondheader">2</div></div><div class="header">
+
+
+
+<div id="third">
+	<div id="thirdheader">3</div></div><div class="header">
+		
  <h1>Figure Skaters</h1>
  <audio id="song" src="skatingsound.mp3"></audio>
 </div>
-
 
 <div class="float-container">
 
@@ -104,19 +137,118 @@
  	<div id="orcas"></div>
   	</div>
 
-  
 </div>
 
+  	
 <script type="text/javascript">
-		var counter = 0 
-	var song = document.getElementById("song")
-	document.body.addEventListener("dblclick", function(){
-		counter = counter + 1
-		if(counter%2 == 1){song.play()}
+	
+dragElement(document.getElementById("first"));
 
-		else if(counter%2 == 0){song.pause()}
-	})
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    elmnt.onmousedown = dragMouseDown;
+  }
 
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+dragElement(document.getElementById("second"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+dragElement(document.getElementById("third"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
 	x.style.display === "none"
 	function myFunction() {
   	var x = document.getElementById("orcas");
@@ -146,7 +278,23 @@
   	}
 	}
 
+	function awards() {
+  	var y = document.getElementById("squid");
+  	if (y.style.display === "none") {
+    y.style.display = "block";
+  	} else {
+    y.style.display = "none";
+  	}
+	}
 
+	var counter = 0 
+	var song = document.getElementById("song")
+	document.body.addEventListener("dblclick", function(){
+		counter = counter + 1
+		if(counter%2 == 1){song.play()}
+
+		else if(counter%2 == 0){song.pause()}
+	})
 
 
 
